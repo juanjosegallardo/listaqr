@@ -9,7 +9,5 @@
 <body>
     <div id="reader" style="width:500px; "></div>
     <div id="result"></div>
-
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quos eaque rem itaque fugit deserunt. Ullam veritatis deserunt vitae saepe rem dolores beatae, exercitationem, ea sunt nostrum ab, qui odit.
 </body>
 </html>
