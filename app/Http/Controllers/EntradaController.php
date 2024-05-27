@@ -14,19 +14,19 @@ class EntradaController extends Controller
     public function mostrarAsistentes()
     {
 
-        $alumnos=  Alumno::whereHas('entradas')->get();
+        $alumnos=  Alumno::whereHas('entradas')->orderBy("nombre")->get();
 
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
     public function mostrarFaltantes()
     {
-        $alumnos=  Alumno::doesntHave('entradas')->get();
+        $alumnos=  Alumno::doesntHave('entradas')->orderBy("nombre")->get();
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
 
     public function mostrarAlumnos()
     {
-        $alumnos =  Alumno::all();
+        $alumnos =  Alumno::orderBy("nombre");
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
 
