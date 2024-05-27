@@ -4,7 +4,7 @@ import {Html5Qrcode} from "html5-qrcode";
 async function onScanSuccess(qrMessage, decodeResult) {
    
             try {
-                const response = await fetch(`http://localhost:8000/api/entradas/${qrMessage}`, {
+                const response = await fetch(`http://oscar.promocionesgallardo.com/api/entradas/${qrMessage}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
