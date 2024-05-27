@@ -14,7 +14,7 @@ async function onScanSuccess(qrMessage, decodeResult) {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
+ 
                 const data = await response.text();
                 console.log(data);
 
