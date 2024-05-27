@@ -1,5 +1,4 @@
-<table>
-asd
+<table border="1">
 @foreach($alumnos as $alumno)
     <tr>
         <td>
@@ -10,9 +9,11 @@ asd
             
             {{$alumno->uuid}}
         </td>
-        <td>
-          {!! QrCode::size(300)->generate($alumno->uuid) !!}
+
+        <td> 
+            {{$alumno->grupo}}
         </td>
+
     </tr>
 
 

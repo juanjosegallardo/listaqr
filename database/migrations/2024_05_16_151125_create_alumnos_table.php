@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("uuid");
             $table->string("nombre");
+            $table->string("grupo");
             $table->timestamps();
         });
     }
