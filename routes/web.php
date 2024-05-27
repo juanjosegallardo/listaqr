@@ -16,7 +16,7 @@ use App\Http\Controllers\EntradaController;
 
 Route::get('/', function () {
     return view('qr');
-});
+}); 
 
 
 Route::get("asistentes", [EntradaController::class, "mostrarAsistentes"]);
