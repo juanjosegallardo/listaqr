@@ -9,5 +9,11 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/concentrado.js": {
+    "file": "assets/concentrado-JeNB393G.js",
+    "name": "concentrado",
+    "src": "resources/js/concentrado.js",
+    "isEntry": true
   }
 }

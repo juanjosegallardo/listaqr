@@ -1,0 +1,1 @@
+setInterval(()=>{fetch("api/grupos").then(e=>e.json()).then(e=>{for(let t in e)document.getElementById("td_"+e[t].grupo+"_total").innerText=e[t].total,document.getElementById("td_"+e[t].grupo+"_asistentes").innerText=e[t].asistentes,document.getElementById("td_"+e[t].grupo+"_faltantes").innerText=e[t].total-e[t].asistentes})},1e3);
