@@ -24,6 +24,21 @@ class EntradaController extends Controller
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
 
+
+    public function mostrarAsistentesGrupo($id)
+    {
+
+        $alumnos=  Alumno::whereHas('entradas')->where("grupo","=",$id)->orderBy("nombre")->get();
+
+        return view("alumnos", ["alumnos"=>$alumnos]);
+    }
+    public function mostrarFaltantesGrupo($id)
+    {
+        $alumnos=  Alumno::doesntHave('entradas')->where("grupo","=",$id)->orderBy("nombre")->get();
+        return view("alumnos", ["alumnos"=>$alumnos]);
+    }
+
+
     public function mostrarAlumnos()
     {
         $alumnos =  Alumno::orderBy("nombre");
