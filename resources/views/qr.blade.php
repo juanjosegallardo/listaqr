@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="col-8" id="result"></div>
-        <div class="col-4"  > <h2 id="grupo"></h2></div>
+        <div class="col-4"  > <h1 id="grupo"></h1></div>
     </div>
 
 
