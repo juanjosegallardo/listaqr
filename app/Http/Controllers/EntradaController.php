@@ -127,7 +127,7 @@ class EntradaController extends Controller
                         "mensaje" => "Entrada registrada, {$alumno->nombre}",
                         "encontrado" => true,
                         "guardado"=>true,
-                        "grupo"=>$alumno->nombre
+                        "grupo"=>$alumno->grupo
                     ]);
                 }
                 return response()->json( [  
