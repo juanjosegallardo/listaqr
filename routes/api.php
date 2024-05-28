@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get("entradas/{id}", [EntradaController::class, "store"]);
 Route::get("alumnos/uuid", [EntradaController::class, "asignarUUID"]);
+Route::get("grupos", [EntradaController::class, "obtenerGrupos"]);

@@ -38,7 +38,31 @@ class EntradaController extends Controller
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
 
+    public function obtenerGrupos()
+    {
+        $grupos = Alumno::select('grupo', DB::raw('count(alumnos.uuid) as total'), DB::raw('count(entradas.uuid) as asistentes'))
+                        ->leftJoin('entradas', 'alumnos.uuid', '=', 'entradas.uuid')
+                        ->groupBy('grupo')
+                        ->get();
 
+        return response()->json($grupos);
+   
+    }
+
+    public function mostrarGrupos()
+    {
+        $grupos = Alumno::select('grupo', DB::raw('count(alumnos.uuid) as total'), DB::raw('count(entradas.uuid) as asistentes'))
+                        ->leftJoin('entradas', 'alumnos.uuid', '=', 'entradas.uuid')
+                        ->groupBy('grupo')
+                        ->get();
+
+        return view("grupos", ["grupos"=>$grupos]);
+   
+    }
+
+
+
+    
     public function mostrarAlumnos()
     {
         $alumnos =  Alumno::orderBy("nombre");

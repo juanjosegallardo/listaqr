@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get("asistentes", [EntradaController::class, "mostrarAsistentes"]);
 Route::get("faltantes", [EntradaController::class, "mostrarFaltantes"]);
 Route::get("alumnos", [EntradaController::class, "mostrarAlumnos"]);
+Route::get("grupos", [EntradaController::class, "mostrarGrupos" ]);
 Route::get("grupos/{id}/asistentes", [EntradaController::class, "mostrarAsistentesGrupo" ]);
 Route::get("grupos/{id}/faltantes", [EntradaController::class, "mostrarFaltantesGrupo" ]);
 
