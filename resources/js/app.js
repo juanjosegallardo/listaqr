@@ -15,10 +15,10 @@ async function onScanSuccess(qrMessage, decodeResult) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
  
-                const data = await response.text();
+                const data = await response.json();
                 console.log(data);
 
-                document.getElementById('result').innerText = `${data}`;
+                document.getElementById('result').innerText = `${data.mensaje}`;
             } catch (error) {
 
                 console.error('Error fetching data from server:', error);

@@ -93,10 +93,19 @@ class EntradaController extends Controller
         {
             if($alumno)
             {
-                return "Ya se registró una entrada con ese código, Alumno: {$alumno->nombre}";
+                return response()->json( [  
+                    "mensaje" => "Ya se registró una entrada con ese código, Alumno: {$alumno->nombre}",
+                    "encontrado" => true,
+                    "guardado"=>false
+                ]);
             }
 
-            return "Ya se registró una entrada con ese código, pero no se tiene registrado a ese alumno";
+            return response()->json( [  
+                "mensaje" => "Ya se registró una entrada con ese código, pero no se tiene registrado a ese alumno",
+                "encontrado" => false,
+                "guardado"=>false
+            ]);
+           
     
         
         }
@@ -111,14 +120,29 @@ class EntradaController extends Controller
 
                 $alumno = Alumno::where("uuid", "=", $id)->first();
                 if($alumno)
-                {
-                    return "Entrada registrada, {$alumno->nombre}";
+                {  
+                    return response()->json( [  
+                        "mensaje" => "Entrada registrada, {$alumno->nombre}",
+                        "encontrado" => true,
+                        "guardado"=>true
+                    ]);
                 }
-                return "Entrada registrada pero no se encontro al alumno";
+                return response()->json( [  
+                    "mensaje" => "Entrada registrada pero no se encontro al alumno",
+                    "encontrado" => false,
+                    "guardado"=>false
+                ]);
+               
+                
             }
             else
             {
-                return "Ocurrio un error intente mas tarde";
+                return response()->json( [  
+                    "mensaje" => "Ocurrió un error, intente mas tarde",
+                    "encontrado" => false,
+                    "guardado"=>false
+                ]);
+               
             }
             
 
