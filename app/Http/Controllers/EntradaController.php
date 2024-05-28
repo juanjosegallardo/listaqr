@@ -63,9 +63,10 @@ class EntradaController extends Controller
 
 
     
-    public function mostrarAlumnos()
+    public function mostrarAlumnosGrupo($id)
     {
-        $alumnos =  Alumno::orderBy("nombre");
+        $alumnos=  Alumno::where("grupo","=",$id)->orderBy("nombre")->get();
+
         return view("alumnos", ["alumnos"=>$alumnos]);
     }
 
