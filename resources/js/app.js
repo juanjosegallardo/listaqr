@@ -19,6 +19,7 @@ async function onScanSuccess(qrMessage, decodeResult) {
                 console.log(data);
 
                 document.getElementById('result').innerText = `${data.mensaje}`;
+                document.getElementById('grupo').innerText = `${data.grupo}`;
             } catch (error) {
 
                 console.error('Error fetching data from server:', error);

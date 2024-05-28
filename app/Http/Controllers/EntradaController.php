@@ -96,14 +96,16 @@ class EntradaController extends Controller
                 return response()->json( [  
                     "mensaje" => "Ya se registró una entrada con ese código, Alumno: {$alumno->nombre}",
                     "encontrado" => true,
-                    "guardado"=>false
+                    "guardado"=>false,
+                    "grupo"=> $alumno->grupo
                 ]);
             }
 
             return response()->json( [  
                 "mensaje" => "Ya se registró una entrada con ese código, pero no se tiene registrado a ese alumno",
                 "encontrado" => false,
-                "guardado"=>false
+                "guardado"=>false,
+                "grupo"=> $alumno->grupo
             ]);
            
     
@@ -124,13 +126,15 @@ class EntradaController extends Controller
                     return response()->json( [  
                         "mensaje" => "Entrada registrada, {$alumno->nombre}",
                         "encontrado" => true,
-                        "guardado"=>true
+                        "guardado"=>true,
+                        "grupo"=>""
                     ]);
                 }
                 return response()->json( [  
                     "mensaje" => "Entrada registrada pero no se encontro al alumno",
                     "encontrado" => false,
-                    "guardado"=>false
+                    "guardado"=>false,
+                    "grupo"=>""
                 ]);
                
                 
