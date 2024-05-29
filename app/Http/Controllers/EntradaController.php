@@ -49,6 +49,17 @@ class EntradaController extends Controller
    
     }
 
+    public function obtenerAlumnos(Request $request)
+    {
+        $busqueda =  $request->busqueda;
+
+        $alumnos = Alumno::nombre($busqueda)
+                        ->get();
+
+        return response()->json($alumnos);
+   
+    }
+
     public function mostrarGrupos()
     {
         $grupos = Alumno::select('grupo', DB::raw('count(alumnos.uuid) as total'), DB::raw('count(entradas.uuid) as asistentes'))

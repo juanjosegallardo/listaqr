@@ -15,4 +15,13 @@ class Alumno extends Model
 
         return $this->hasMany(Entrada::class,"uuid", "uuid");
     }
+
+    public function scopeNombre($query, $nombre)
+    {
+        if($nombre)
+        {
+            //return $query->WhereRaw("MATCH(nombre) AGAINST('{$nombre}')");
+            return $query->where("nombre", "like", "%{$nombre}%");
+        }  
+    }
 }

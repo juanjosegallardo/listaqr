@@ -15,14 +15,21 @@
          })
     </script>
 </head>
-<body>
+<body class="m-2">
     <div id="reader" ></div>
 
-    <div class="row">
-        <div class="col-8" id="result"></div>
-        <div class="col-4"  > <h1 id="grupo"></h1></div>
+    <div class="row oy-2">
+        <div class="col-9" id="result"></div>
+        <div class="col-3"  > <h1 id="grupo"></h1></div>
+    </div>
+    Busqueda manual: <br>
+
+    <div class="autocomplete">
+        <input class="w-100" type="text" id="alumnoInput" placeholder="Nombre del alumno">
+        <ul id="alumnoList"></ul>
     </div>
 
+    <button class="w-100 btn btn-primary my-2" id="btnBuscar" >Buscar</button>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
